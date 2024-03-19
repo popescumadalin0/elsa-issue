@@ -1,0 +1,14 @@
+﻿@page "/workflows/instances"
+
+<WorkflowInstanceListWrapper ViewWorkflowInstance="@OnViewWorkflowInstance"/>
+
+@code {
+
+    [Inject] NavigationManager NavigationManager { get; set; } = default!;
+
+    private void OnViewWorkflowInstance(string instanceId)
+    {
+        NavigationManager.NavigateTo($"workflows/instances/{instanceId}/view");
+    }
+
+}

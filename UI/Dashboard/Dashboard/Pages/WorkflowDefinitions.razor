@@ -1,0 +1,12 @@
+﻿@page "/workflows/definitions"
+
+<WorkflowDefinitionListWrapper EditWorkflowDefinition="@OnEditWorkflowDefinition" />
+
+@code {
+    [Inject] NavigationManager NavigationManager { get; set; } = default!;
+    
+    private void OnEditWorkflowDefinition(string definitionId)
+    { 
+        NavigationManager.NavigateTo($"workflows/definitions/{definitionId}/edit");
+    }
+}
